@@ -4,20 +4,18 @@ import 'package:my_spotify/home/main.dart';
 import '../../widgets/custom_field.dart';
 import '../../widgets/auth_gradient_button.dart';
 
-class SignupPage extends StatefulWidget {
-  const SignupPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<SignupPage> createState() => _SignupPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _SignupPageState extends State<SignupPage> {
-  final TextEditingController nameController = TextEditingController();
+class _LoginPageState extends State<LoginPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   @override
   void dispose() {
-    nameController.dispose();
     emailController.dispose();
     passwordController.dispose();
     super.dispose();
@@ -38,11 +36,6 @@ class _SignupPageState extends State<SignupPage> {
                       fontWeight: FontWeight.bold)),
               SizedBox(height: MediaQuery.of(context).size.height * 0.04),
               CustomField(
-                  hintText: 'fill your name',
-                  labelText: 'Tên',
-                  controller: nameController),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.04),
-              CustomField(
                   hintText: 'your e-mail',
                   labelText: 'Mail',
                   controller: emailController),
@@ -54,15 +47,15 @@ class _SignupPageState extends State<SignupPage> {
                 isObscureText: true,
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-              AuthGradientButton(),
+              const AuthGradientButton(),
               SizedBox(height: MediaQuery.of(context).size.height * 0.02),
               RichText(
                 text: TextSpan(
-                    text: 'or you already have one? ',
+                    text: 'You are new one? ',
                     style: Theme.of(context).textTheme.titleMedium,
                     children: const <TextSpan>[
                       TextSpan(
-                          text: ' Sign-in',
+                          text: ' Sign-oops',
                           style: TextStyle(
                               color: Pallete.gradient3,
                               fontWeight: FontWeight.bold)),
